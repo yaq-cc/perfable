@@ -1,0 +1,68 @@
+{
+    "type": "MESSAGE",
+    "eventTime": "2022-03-18T16:31:59.374799Z",
+    "message": {
+      "name": "spaces/o3Cgo4AAAAE/messages/oBTWu4DoI4c.oBTWu4DoI4c",
+      "sender": {
+        "name": "users/115628158260942318299",
+        "displayName": "Yvan Aquino",
+        "avatarUrl": "https://lh3.googleusercontent.com/a/AATXAJwuSK5Esgvhqn5VqlTjmc9Zl2CYu0YD9Ho_a_nS\u003dk",
+        "email": "yvan.aquino@cloud-colosseum.net",
+        "type": "HUMAN",
+        "domainId": "479whx3"
+      },
+      "createTime": "2022-03-18T16:31:59.374799Z",
+      "text": "/AdvancedCardTest",
+      "annotations": [{
+        "type": "SLASH_COMMAND",
+        "startIndex": 0,
+        "length": 17,
+        "slashCommand": {
+          "bot": {
+            "name": "users/103434582560118743853",
+            "displayName": "TestBot",
+            "avatarUrl": "https://lh4.googleusercontent.com/proxy/OZMFyLDoGCm-2V7SBhV0c2DXyiZ26tVD7PzOQZYdnj20q41SUlyWoyPkiD2P_J0Luo2uxHm0fzgBUzNTsjVqscRtoKqOzh3uH2e3HhmtF1WbCs6boRCS24LqYCZIP_sKLkZ3SncN0RXoMK7a2pA",
+            "type": "BOT"
+          },
+          "type": "INVOKE",
+          "commandName": "/AdvancedCardTest",
+          "commandId": "3"
+        }
+      }],
+      "thread": {
+        "name": "spaces/o3Cgo4AAAAE/threads/oBTWu4DoI4c",
+        "retentionSettings": {
+          "state": "PERMANENT"
+        }
+      },
+      "space": {
+        "name": "spaces/o3Cgo4AAAAE",
+        "type": "DM",
+        "singleUserBotDm": true,
+        "spaceThreadingState": "FLAT_MESSAGES",
+        "spaceType": "DIRECT_MESSAGE",
+        "spaceHistoryState": "HISTORY_ON"
+      },
+      "slashCommand": {
+        "commandId": "3"
+      },
+      "lastUpdateTime": "2022-03-18T16:31:59.374799Z"
+    },
+    "user": {
+      "name": "users/115628158260942318299",
+      "displayName": "Yvan Aquino",
+      "avatarUrl": "https://lh3.googleusercontent.com/a/AATXAJwuSK5Esgvhqn5VqlTjmc9Zl2CYu0YD9Ho_a_nS\u003dk",
+      "email": "yvan.aquino@cloud-colosseum.net",
+      "type": "HUMAN",
+      "domainId": "479whx3"
+    },
+    "space": {
+      "name": "spaces/o3Cgo4AAAAE",
+      "type": "DM",
+      "singleUserBotDm": true,
+      "spaceThreadingState": "FLAT_MESSAGES",
+      "spaceType": "DIRECT_MESSAGE",
+      "spaceHistoryState": "HISTORY_ON"
+    },
+    "configCompleteRedirectUrl": "https://chat.google.com/api/bot_config_complete?token\u003dAAJCfVWoKLAnuSBK1osAnJj1CeAXscveRMnjft1CdsU_uK8SPmoDHHj8UaZGvU0E1juXN37uwfpaymp6lNIpKp39LKeaT9pRfbRzX1y77Z45K_4YE81sdd--ckXJKje_qRrarCcaT4e5V3QmapBo8b4%3D"
+  }

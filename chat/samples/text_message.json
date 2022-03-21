@@ -1,0 +1,50 @@
+{
+    "type": "MESSAGE",
+    "eventTime": "2022-03-18T16:31:55.264095Z",
+    "message": {
+      "name": "spaces/o3Cgo4AAAAE/messages/6MUN8FDEiRg.6MUN8FDEiRg",
+      "sender": {
+        "name": "users/115628158260942318299",
+        "displayName": "Yvan Aquino",
+        "avatarUrl": "https://lh3.googleusercontent.com/a/AATXAJwuSK5Esgvhqn5VqlTjmc9Zl2CYu0YD9Ho_a_nS\u003dk",
+        "email": "yvan.aquino@cloud-colosseum.net",
+        "type": "HUMAN",
+        "domainId": "479whx3"
+      },
+      "createTime": "2022-03-18T16:31:55.264095Z",
+      "text": "Hi",
+      "thread": {
+        "name": "spaces/o3Cgo4AAAAE/threads/6MUN8FDEiRg",
+        "retentionSettings": {
+          "state": "PERMANENT"
+        }
+      },
+      "space": {
+        "name": "spaces/o3Cgo4AAAAE",
+        "type": "DM",
+        "singleUserBotDm": true,
+        "spaceThreadingState": "FLAT_MESSAGES",
+        "spaceType": "DIRECT_MESSAGE",
+        "spaceHistoryState": "HISTORY_ON"
+      },
+      "argumentText": "Hi",
+      "lastUpdateTime": "2022-03-18T16:31:55.264095Z"
+    },
+    "user": {
+      "name": "users/115628158260942318299",
+      "displayName": "Yvan Aquino",
+      "avatarUrl": "https://lh3.googleusercontent.com/a/AATXAJwuSK5Esgvhqn5VqlTjmc9Zl2CYu0YD9Ho_a_nS\u003dk",
+      "email": "yvan.aquino@cloud-colosseum.net",
+      "type": "HUMAN",
+      "domainId": "479whx3"
+    },
+    "space": {
+      "name": "spaces/o3Cgo4AAAAE",
+      "type": "DM",
+      "singleUserBotDm": true,
+      "spaceThreadingState": "FLAT_MESSAGES",
+      "spaceType": "DIRECT_MESSAGE",
+      "spaceHistoryState": "HISTORY_ON"
+    },
+    "configCompleteRedirectUrl": "https://chat.google.com/api/bot_config_complete?token\u003dAAJCfVUBsqv8oaMhqcsbOT5PNy3_LRL3UhtqM1s3dnuw_Vp4BwcTR4aRE3z8dHIULcaXnrUFRxVx4uFLBx_w4La0zXDqLUTZBiPVwZZtl29Dra_dfPEmmGwiXYr4DtAHIXH2hV6cX6XXYpvdPJ1v3ms%3D"
+  }

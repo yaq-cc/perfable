@@ -1,0 +1,78 @@
+{
+    "sections": [
+      {
+        "widgets": [
+          {
+            "decoratedText": {
+              "topLabel": "User",
+              "text": "User.user_display_name",
+              "bottomLabel": "",
+              "startIcon": {
+                "knownIcon": "PERSON",
+                "altText": "Alternate text",
+                "imageType": "SQUARE"
+              },
+              "wrapText": false
+            }
+          },
+          {
+            "selectionInput": {
+              "type": "DROPDOWN",
+              "label": "Perf Period",
+              "name": "perf_period",
+              "items": [
+                {
+                  "text": "Choice 3",
+                  "value": "3",
+                  "selected": false
+                }
+              ]
+            },
+            "horizontalAlignment": "START"
+          },
+          {
+            "dateTimePicker": {
+              "label": "Activity Date",
+              "name": "activity_date",
+              "type": "DATE_ONLY",
+              "valueMsEpoch": 231
+            }
+          },
+          {
+            "selectionInput": {
+              "type": "DROPDOWN",
+              "label": "Perf Category",
+              "name": "note_category",
+              "items": [
+                {
+                  "text": "Choice 1",
+                  "value": "1",
+                  "selected": false
+                },
+                {
+                  "text": "Choice 2",
+                  "value": "2",
+                  "selected": false
+                }
+              ]
+            }
+          },
+          {
+            "textInput": {
+              "label": "Describe your impactful activity",
+              "type": "SINGLE_LINE",
+              "name": "note_description"
+            }
+          },
+          {
+            "textInput": {
+              "label": "Financial impact",
+              "type": "SINGLE_LINE",
+              "name": "note_value",
+              "hintText": ""
+            }
+          }
+        ]
+      }
+    ]
+  }

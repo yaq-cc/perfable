@@ -1,0 +1,20 @@
+{
+    "type": "ADDED_TO_SPACE",
+    "eventTime": "2022-03-18T16:31:51.884902Z",
+    "user": {
+      "name": "users/115628158260942318299",
+      "displayName": "Yvan Aquino",
+      "avatarUrl": "https://lh3.googleusercontent.com/a/AATXAJwuSK5Esgvhqn5VqlTjmc9Zl2CYu0YD9Ho_a_nS\u003dk",
+      "email": "yvan.aquino@cloud-colosseum.net",
+      "type": "HUMAN",
+      "domainId": "479whx3"
+    },
+    "space": {
+      "name": "spaces/o3Cgo4AAAAE",
+      "type": "DM",
+      "singleUserBotDm": true,
+      "spaceThreadingState": "FLAT_MESSAGES",
+      "spaceType": "DIRECT_MESSAGE",
+      "spaceHistoryState": "HISTORY_ON"
+    }
+  }

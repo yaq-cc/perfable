@@ -1,0 +1,10 @@
+import os
+import json
+from models import *
+
+samples = os.listdir("samples/")
+for sample_file in samples:
+    with open("samples/" + sample_file) as src:
+        sample = json.load(src)
+        event = Event(**sample)
+        print(event.message)
