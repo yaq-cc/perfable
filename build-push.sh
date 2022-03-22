@@ -13,7 +13,7 @@ gcloud run deploy perfable \
     --set-env-vars DB_CNST=postgresql+psycopg2://${_DB_USER}:${_DB_PASS}@${_DB_HOST}:${_DB_PORT}/${_DB_NAME} \
     --timeout 10m \
     --no-cpu-throttling \
-    --vpc-connector ${VPC_CN} \
+    --vpc-connector ${_VPC_CON} \
     --region us-central1 \
     --platform managed \
     --min-instances 0 \
