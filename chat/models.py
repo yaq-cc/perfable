@@ -419,8 +419,18 @@ class ActionResponseTypes:
     REQUEST_CONFIG = "REQUEST_CONFIG"
     DIALOG = "DIALOG"
 
-class ActionResponse(ToDictMixin, BaseModel):
+
+class _ActionResponse(BaseModel):
     type: str
     url: Optional[str]
     dialogAction: Optional[DialogAction]
+
+class ActionResponse(ToDictMixin, BaseModel):
+    actionResponse: _ActionResponse
+
+    @classmethod
+    def make(cls, **kwargs):
+        return cls(
+            actionResponse=_ActionResponse(**kwargs)
+        )
 

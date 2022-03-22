@@ -81,7 +81,7 @@ def new_note_dialog(event: Event) -> Card:
         ],
     )
 
-    return ActionResponse(
+    return ActionResponse.make(
         type=ActionResponseTypes.DIALOG,
         dialogAction=DialogAction(
             dialog=Dialog(body=card),
