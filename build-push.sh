@@ -1,12 +1,20 @@
 #! /bin/bash
 
-docker build -t gcr.io/holy-diver-297719/perfable . 
-docker push gcr.io/holy-diver-297719/perfable
+docker build -t gcr.io/$DEVSHELL_PROJECT_ID/perfable . 
+docker push gcr.io/$DEVSHELL_PROJECT_ID/perfable
 gcloud run deploy perfable \
-    --project holy-diver-297719 \
-    --image gcr.io/holy-diver-297719/perfable \
+    --project $DEVSHELL_PROJECT_ID \
+    --image gcr.io/$DEVSHELL_PROJECT_ID/perfable \
+    --set-env-vars DB_HOST=${_DB_HOST} \
+    --set-env-vars DB_PORT=${_DB_PORT} \
+    --set-env-vars DB_USER=${_DB_USER} \
+    --set-env-vars DB_PASS=${_DB_PASS} \
+    --set-env-vars DB_NAME=${_DB_NAME} \
+    --set-env-vars DB_CNST=postgresql+psycopg2://${_DB_USER}:${_DB_PASS}@${_DB_HOST}:${_DB_PORT}/${_DB_NAME} \
     --timeout 10m \
-    --region us-east4 \
+    --no-cpu-throttling \
+    --vpc-connector ${VPC_CN} \
+    --region us-central1 \
     --platform managed \
     --min-instances 0 \
     --max-instances 3 \
