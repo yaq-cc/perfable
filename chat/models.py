@@ -411,7 +411,15 @@ class DialogAction(BaseModel):
     dialog: Optional[Dialog]
 
 
-class ActionResponse(BaseModel):
+class ActionResponseTypes:
+    TYPE_UNSPECIFIED = "TYPE_UNSPECIFIED"
+    NEW_MESSAGE = "NEW_MESSAGE"
+    UPDATE_MESSAGE = "UPDATE_MESSAGE"
+    UPDATE_USER_MESSAGE_CARDS = "UPDATE_USER_MESSAGE_CARDS"
+    REQUEST_CONFIG = "REQUEST_CONFIG"
+    DIALOG = "DIALOG"
+
+class ActionResponse(ToDictMixin, BaseModel):
     type: str
     url: Optional[str]
     dialogAction: Optional[DialogAction]
