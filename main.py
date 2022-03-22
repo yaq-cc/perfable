@@ -21,8 +21,7 @@ DB_CNST = os.environ.get("DB_CNST")
 
 # Database engine and session objects
 engine = create_engine(DB_CNST)
-Session = sessionmak]t vv/kohg
-'uybder456sftv3bu-lg76=b3er(engine)
+Session = sessionmaker(engine)
 
 app = FastAPI()
 
