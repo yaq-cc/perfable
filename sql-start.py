@@ -15,7 +15,7 @@ class Sequence:
         return self.val
 
 
-DB_CNST = os.environ.get("DB_CNST")
+DB_CNST = os.environ.get("_DB_CNST")
 
 engine = create_engine(DB_CNST)
 Session = sessionmaker(engine)

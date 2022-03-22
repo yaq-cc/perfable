@@ -62,7 +62,7 @@ class User(Base):
     def get_or_create_user(session: Session, user: models.User):
         _user = User.get_user(session, user)
         if not _user:
-            _user = User.set_user(session, user)
+            _user = User.create_user(session, user)
         return _user
 
 
