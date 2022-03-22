@@ -27,8 +27,9 @@ app = FastAPI()
 
 def dialog_event_router(event: Event):
     commandId = event.message.slashCommand.commandId
-    print(commandId)
-    return new_note_dialog(event)
+    card_response = new_note_dialog(event)
+    print(json.dumps(card_response.to_dict()))
+    return card_response
 
 def slash_command_router(event: Event):
     commandId = event.message.slashCommand.commandId
