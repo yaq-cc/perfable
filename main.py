@@ -5,9 +5,10 @@ from fastapi import FastAPI
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from chat.models import Event, EventTypes, TextResponse
+from chat.events import Event, EventTypes, TextResponse
 from sql_models import User, NoteCategory, Note, NoteCollaborator
 from cards import new_note_dialog
+
 # https://webhook.site/b1ed04dc-946b-42b4-b9f2-a62ef2d3cac4
 # https://perfable-63ietzwyxq-uk.a.run.app
 

@@ -152,9 +152,42 @@ class OpenLinkOnClick(OnClick):
     openLink: OpenLink
 
 
+class Widget(BaseModel):
+    # Used for inheritance
+    horizontalAlignment: Optional[str]
+    ...
+
+
+class Icon(Widget):
+    altText: Optional[str]
+    imageType: str
+    knownIcon: Optional[str]
+    iconUrl: Optional[str]
+
+
 class Button(BaseModel):
     # Used for Inheritance
     ...
+
+
+class Color(BaseModel):
+    red: float
+    green: float
+    blue: float
+    alpha: float
+
+
+class MessageButton(BaseModel):
+    text: str
+    icon: Optional[Icon]
+    color: Optional[Color]
+    onClick: Optional[OnClick]
+    disabled: bool = False
+    altText: Optional[str]
+
+
+class ButtonList(BaseModel):
+    buttons: List[MessageButton]
 
 
 class ImageButton(Button):
@@ -169,26 +202,12 @@ class TextButton(Button):
     onClick: Optional[OnClick]
 
 
-class Widget(BaseModel):
-    # Used for inheritance
-    horizontalAlignment: Optional[str]
-    ...
 
 
 class ControlWidget(BaseModel):
     # Used for inheritance
     ...
 
-
-class Icon(Widget):
-    altText: Optional[str]
-    imageType: str
-    knownIcon: Optional[str]
-    iconUrl: Optional[str]
-
-
-class Color(BaseModel):
-    ...
 
 class ControlButton(ControlWidget):
     # Also recognized as a Button
@@ -232,9 +251,9 @@ class DecoratedText(Widget):
 
 
 
-class ButtonList(Widget):
-    # https://developers.google.com/chat/api/reference/rest/v1/spaces.messages#buttonlist
-    buttons: List[ControlButton]
+# class ButtonList(Widget):
+#     # https://developers.google.com/chat/api/reference/rest/v1/spaces.messages#buttonlist
+#     buttons: List[ControlButton]
 
 
 class Action(BaseModel):

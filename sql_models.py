@@ -6,7 +6,9 @@ from sqlalchemy import Integer, Column, create_engine, ForeignKey, String, selec
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.declarative import declarative_base
 
-from chat import models 
+# from chat import models 
+from chat import events
+
 
 def guid():
     return str(uuid.uuid4())
@@ -31,7 +33,7 @@ class User(Base):
     user_last = Column(String)
 
     @staticmethod
-    def get_user(session: Session, user: models.User):
+    def get_user(session: Session, user: events.User):
         # Returns None if no user is found.
         print("getting user.")
         return (
@@ -42,7 +44,7 @@ class User(Base):
         )
 
     @staticmethod
-    def create_user(session: Session, user: models.User):
+    def create_user(session: Session, user: events.User):
         print("Setting user.")
         username, domain = user.email.split("@")
         name_parts = user.senders_name
@@ -59,7 +61,7 @@ class User(Base):
         return _user
 
     @staticmethod
-    def get_or_create_user(session: Session, user: models.User):
+    def get_or_create_user(session: Session, user: events.User):
         _user = User.get_user(session, user)
         if not _user:
             _user = User.create_user(session, user)
