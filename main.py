@@ -93,7 +93,8 @@ def router(event: Event):
 
 @app.post("/")
 async def handler(request: Request):
-    body = request.json()
+    # Request.json is a coroutine and needs to be awaited.
+    body = await request.json() 
     requests.post(AUDITOR, json=body)
     event = Event(**body)
     return router(event)
