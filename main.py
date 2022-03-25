@@ -6,7 +6,8 @@ from fastapi import FastAPI, Request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from chat.events import Event, EventTypes, TextResponse
-from chat.messages import ActionResponse, ActionResponseTypes, DialogAction, ActionStatus
+from chat.messages import ActionResponse, ActionResponseTypes
+from chat.messages import DialogAction, ActionStatus, ActionStatusCodes
 from sql_models import User, NoteCategory, Note, NoteCollaborator
 from cards import new_note_dialog
 
@@ -73,7 +74,7 @@ def card_clicked_router(event: Event):
         type=ActionResponseTypes.DIALOG,
         dialogAction=DialogAction(
             actionStatus=ActionStatus(
-                statusCode="200",
+                statusCode=ActionStatusCodes.OK,
                 userFacingMessage="Here's a message for you!",
             )
         ),

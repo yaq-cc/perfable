@@ -250,6 +250,16 @@ class Dialog(BaseModel):
     body: Card
 
 
+# More here: https://developers.google.com/chat/api/reference/rest/v1/spaces.messages#Code
+class ActionStatusCodes(str, Enum):
+    OK = "OK"
+    CANCELLED = "CANCELLED"
+    UNKNOWN = "UNKNOWN"
+    INVALID_ARGUMENT = "INVALID_ARGUMENT"
+    DEADLINE_EXCEEDED = "DEADLINE_EXCEEDED"
+    NOT_FOUND = "NOT_FOUND"
+    ALREADY_EXISTS = "ALREADY_EXISTS"
+
 class ActionStatus(BaseModel):
     statusCode: Optional[str]
     userFacingMessage: Optional[str]
