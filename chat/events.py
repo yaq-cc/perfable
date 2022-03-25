@@ -70,7 +70,7 @@ class Message(BaseModel):
     name: str
     sender: Sender
     createTime: str
-    text: str
+    text: Optional[str]
     annotations: Optional[List[Annotation]]
     thread: Thread
     space: Space
@@ -84,7 +84,7 @@ class TimeZone(BaseModel):
     offset: str
 
 class Common(BaseModel):
-    userLocale: str
+    userLocale: Optional[str]
     hostApp: Optional[str]
     platform: Optional[str]
     timeZone: Optional[TimeZone]

@@ -1,0 +1,80 @@
+{
+	"type": "CARD_CLICKED",
+	"eventTime": "2022-03-25T15:07:37.687595Z",
+	"message": {
+		"name": "spaces/yCe6i4AAAAE/messages/bfQwmh5Lfbw.bfQwmh5Lfbw",
+		"sender": {
+			"name": "users/109676913882946371817",
+			"displayName": "Yvan Aquino",
+			"avatarUrl": "https://lh3.googleusercontent.com/a-/AOh14GhOxnc17LgkOb-3m-vco9kZ1xmslntYstajRKxT=k",
+			"email": "yaquino@google.com",
+			"type": "HUMAN",
+			"domainId": "2h8e9nw"
+		},
+		"createTime": "2022-03-25T15:07:37.687595Z",
+		"thread": {
+			"name": "spaces/yCe6i4AAAAE/threads/bfQwmh5Lfbw",
+			"retentionSettings": {
+				"state": "EPHEMERAL_ONE_DAY",
+				"expiryTimestamp": "1648307257510438"
+			}
+		},
+		"space": {
+			"name": "spaces/yCe6i4AAAAE",
+			"type": "DM",
+			"singleUserBotDm": true,
+			"spaceThreadingState": "UNTHREADED_MESSAGES",
+			"spaceType": "DIRECT_MESSAGE",
+			"spaceHistoryState": "HISTORY_OFF"
+		},
+		"lastUpdateTime": "2022-03-25T15:07:37.687595Z"
+	},
+	"user": {
+		"name": "users/109676913882946371817",
+		"displayName": "Yvan Aquino",
+		"avatarUrl": "https://lh3.googleusercontent.com/a-/AOh14GhOxnc17LgkOb-3m-vco9kZ1xmslntYstajRKxT=k",
+		"email": "yaquino@google.com",
+		"type": "HUMAN",
+		"domainId": "2h8e9nw"
+	},
+	"space": {
+		"name": "spaces/yCe6i4AAAAE",
+		"type": "DM",
+		"singleUserBotDm": true,
+		"spaceThreadingState": "UNTHREADED_MESSAGES",
+		"spaceType": "DIRECT_MESSAGE",
+		"spaceHistoryState": "HISTORY_OFF"
+	},
+	"action": {
+		"actionMethodName": "newNoteSubmit"
+	},
+	"configCompleteRedirectUrl": "https://dynamite-preprod.sandbox.google.com/api/bot_config_complete?token=AAJCfVUtxkU6dYtiFm-jb948lI3D87mtCp8hbsU-QHOh-hUM6BI6tgS3ZhIm2dBQBje3WukRyFyrF0HYaHiW583R9_qQryjXogfvboY3DrZS74gGcZd1tMcknB15LcaEKMloMj6yxhsRW2oXjlI-",
+	"isDialogEvent": true,
+	"dialogEventType": "SUBMIT_DIALOG",
+	"common": {
+		"hostApp": "CHAT",
+		"formInputs": {
+			"note_value": {
+				"stringInputs": {
+					"value": [""]
+				}
+			},
+			"perf_period": {
+				"stringInputs": {
+					"value": ["yup"]
+				}
+			},
+			"note_description": {
+				"stringInputs": {
+					"value": [""]
+				}
+			},
+			"perf_category": {
+				"stringInputs": {
+					"value": ["0"]
+				}
+			}
+		},
+		"invokedFunction": "newNoteSubmit"
+	}
+}

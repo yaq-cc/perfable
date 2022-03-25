@@ -22,7 +22,7 @@ class ActionParameter(BaseModel):
 
 class FormAction(BaseModel):
     actionMethodName: str
-    parameters: List[ActionParameter]
+    parameters: Optional[List[ActionParameter]]
 
 
 class OpenLink(BaseModel):

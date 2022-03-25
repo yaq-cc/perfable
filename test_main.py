@@ -13,6 +13,7 @@ samples = {
     "removed_from_space.json",
     "slash_command_1.json",
     "text_message.json"
+    "dialog_response_newNoteSubmit.json"
 }
 
 def from_json(fp: str) -> dict:
@@ -57,6 +58,12 @@ def test_slash_command_3_route():
 
 def test_dialog_request_route():
     sample = from_json("dialog_request.json")
+    response = client.post("/", json=sample)
+    print(json.dumps(response.json(), indent=2))
+    assert response.status_code == 200
+
+def test_dialog_response_route():
+    sample = from_json("dialog_response_newNoteSubmit.json")
     response = client.post("/", json=sample)
     print(json.dumps(response.json(), indent=2))
     assert response.status_code == 200

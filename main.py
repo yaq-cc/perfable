@@ -65,7 +65,7 @@ def slash_command_router(event: Event):
 def card_clicked_router(event: Event):
     if event.dialogEventType == "SUBMIT_DIALOG":
        if event.action.actionMethodName == "newNoteSubmit":
-           print("yup!")
+           print(json.dumps(event.common.formInputs, indent=2))
     else:
         print("NotImplementedError")
 
