@@ -2,7 +2,7 @@ import os
 import json
 
 import requests
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -65,7 +65,6 @@ def slash_command_router(event: Event):
 def card_clicked_router(event: Event):
     if event.dialogEventType == "SUBMIT_DIALOG":
        if event.action.actionMethodName == "newNoteSubmit":
-           requests.post(AUDITOR, json=json.dumps(event.dict(), default=str))
            print("yup!")
     else:
         print("NotImplementedError")
@@ -93,6 +92,9 @@ def router(event: Event):
     return response.to_dict()
 
 @app.post("/")
-async def handler(event: Event):
+async def handler(request: Request):
+    body = request.json()
+    requests.post(AUDITOR, json=body)
+    event = Event(**body)
     return router(event)
 
