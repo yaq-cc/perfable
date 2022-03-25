@@ -65,8 +65,13 @@ def slash_command_router(event: Event):
 
 def card_clicked_router(event: Event):
     if event.dialogEventType == "SUBMIT_DIALOG":
-       if event.action.actionMethodName == "newNoteSubmit":
-           print(json.dumps(event.common.formInputs, indent=2))
+        if event.action.actionMethodName == "newNoteSubmit":
+           status = ActionStatusCodes.OK
+        elif event.action.actionMethodName == "newNoteCancel":
+            status = ActionStatusCodes.CANCELLED
+        else:
+            status = ActionStatusCodes.UNKNOWN
+
     else:
         print("NotImplementedError")
 
@@ -74,7 +79,7 @@ def card_clicked_router(event: Event):
         type=ActionResponseTypes.DIALOG,
         dialogAction=DialogAction(
             actionStatus=ActionStatus(
-                statusCode=ActionStatusCodes.OK,
+                statusCode=status,
                 userFacingMessage="Here's a message for you!",
             )
         ),

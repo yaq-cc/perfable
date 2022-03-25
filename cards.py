@@ -66,6 +66,19 @@ def new_note_dialog(event: Event) -> Card:
         name="note_value",
     ))
 
+    note_salesforce_id = Widget(textInput=TextInput(
+        label="Related Vector Opportunity Link",
+        type=TextInputTypes.SINGLE_LINE,
+        name="note_salesforce_id",
+    ))
+
+    note_collaborators = Widget(textInput=TextInput(
+        label="Activity Collaborators",
+        type=TextInputTypes.SINGLE_LINE,
+        name="note_collaborators",
+        hintText="comma separated listing of collaborator LDAPs"
+    ))
+
     submit_action = Action(function="newNoteSubmit")
     cancel_action = Action(function="newNoteCancel")
 
@@ -83,6 +96,8 @@ def new_note_dialog(event: Event) -> Card:
         perf_category,
         note_description,
         note_value,
+        note_salesforce_id,
+        note_collaborators,
         submit_buttons
     ]
 
