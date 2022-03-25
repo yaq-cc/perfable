@@ -1,8 +1,8 @@
 {
 	"type": "CARD_CLICKED",
-	"eventTime": "2022-03-25T15:07:37.687595Z",
+	"eventTime": "2022-03-25T15:57:04.758027Z",
 	"message": {
-		"name": "spaces/yCe6i4AAAAE/messages/bfQwmh5Lfbw.bfQwmh5Lfbw",
+		"name": "spaces/yCe6i4AAAAE/messages/XCZ3Hn8GVxQ.XCZ3Hn8GVxQ",
 		"sender": {
 			"name": "users/109676913882946371817",
 			"displayName": "Yvan Aquino",
@@ -11,12 +11,12 @@
 			"type": "HUMAN",
 			"domainId": "2h8e9nw"
 		},
-		"createTime": "2022-03-25T15:07:37.687595Z",
+		"createTime": "2022-03-25T15:57:04.758027Z",
 		"thread": {
-			"name": "spaces/yCe6i4AAAAE/threads/bfQwmh5Lfbw",
+			"name": "spaces/yCe6i4AAAAE/threads/XCZ3Hn8GVxQ",
 			"retentionSettings": {
 				"state": "EPHEMERAL_ONE_DAY",
-				"expiryTimestamp": "1648307257510438"
+				"expiryTimestamp": "1648310224550008"
 			}
 		},
 		"space": {
@@ -27,7 +27,7 @@
 			"spaceType": "DIRECT_MESSAGE",
 			"spaceHistoryState": "HISTORY_OFF"
 		},
-		"lastUpdateTime": "2022-03-25T15:07:37.687595Z"
+		"lastUpdateTime": "2022-03-25T15:57:04.758027Z"
 	},
 	"user": {
 		"name": "users/109676913882946371817",
@@ -48,30 +48,40 @@
 	"action": {
 		"actionMethodName": "newNoteSubmit"
 	},
-	"configCompleteRedirectUrl": "https://dynamite-preprod.sandbox.google.com/api/bot_config_complete?token=AAJCfVUtxkU6dYtiFm-jb948lI3D87mtCp8hbsU-QHOh-hUM6BI6tgS3ZhIm2dBQBje3WukRyFyrF0HYaHiW583R9_qQryjXogfvboY3DrZS74gGcZd1tMcknB15LcaEKMloMj6yxhsRW2oXjlI-",
+	"configCompleteRedirectUrl": "https://dynamite-preprod.sandbox.google.com/api/bot_config_complete?token=AAJCfVWxohCuOdEm8zNRgCTODrUS0xdA6RdnFdsemDdQSL9IC2-3-EynT4bsujjD-ymdQ4wyiu7Bh8uFDgOLQclmAp9aAX_iyLRCA6qlmCCeLCeJ55xyWjHjj3JQQJMwHS45K75ow4kG-ADFbj5l",
 	"isDialogEvent": true,
 	"dialogEventType": "SUBMIT_DIALOG",
 	"common": {
 		"hostApp": "CHAT",
 		"formInputs": {
+			"note_collaborators": {
+				"stringInputs": {
+					"value": ["yvan, payam, peter"]
+				}
+			},
 			"note_value": {
 				"stringInputs": {
-					"value": [""]
+					"value": ["20,000.00 "]
 				}
 			},
 			"perf_period": {
 				"stringInputs": {
-					"value": ["yup"]
+					"value": ["other"]
 				}
 			},
 			"note_description": {
 				"stringInputs": {
-					"value": [""]
+					"value": ["This was really helpfuly"]
+				}
+			},
+			"note_salesforce_id": {
+				"stringInputs": {
+					"value": ["123"]
 				}
 			},
 			"perf_category": {
 				"stringInputs": {
-					"value": ["0"]
+					"value": ["3"]
 				}
 			}
 		},

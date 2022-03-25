@@ -42,7 +42,6 @@ def slash_command_router(event: Event):
         return dialog_event_router(event)
     elif commandId == "1":
         user = event.state.get("user")
-        print(user.user_display_name, " ~ ", user.user_id)
         note = Note(
             note_owner=user.user_id,
             note_perf_period="2022-H2",
@@ -64,9 +63,32 @@ def slash_command_router(event: Event):
     return TextResponse(text=text)
 
 def card_clicked_router(event: Event):
+    user = event.state.get("user")
+    session = event.state.get("session")
+    inputs = event.common.formInputs
     if event.dialogEventType == "SUBMIT_DIALOG":
         if event.action.actionMethodName == "newNoteSubmit":
-           status = ActionStatusCodes.OK
+            note_value = inputs["note_value"]["stringInputs"]["value"][0]
+            note_value = 0 if not note_value else int(float(note_value.strip().replace(",", "")))
+            note = Note(
+            note_owner=user.user_id,
+            note_perf_period=inputs["perf_period"]["stringInputs"]["value"][0],
+            note_category=inputs["perf_category"]["stringInputs"]["value"][0],
+            note_description=inputs["note_description"]["stringInputs"]["value"][0],
+            note_value=int(note_value),
+            note_salesforce_id=inputs["note_salesforce_id"]["stringInputs"]["value"][0]
+            )
+            note = note.create_note(session)
+            # collaborators = inputs["note_collaborators"]["stringInputs"]["value"][0]
+            # collaborators = collaborators.strip().split(" ")
+            # for c in collaborators:
+            #     collab = NoteCollaborator(
+            #         note_id = note.note_id,
+            #         note_collaborator_name = c
+            #     )
+            #     session.add(collab)
+            # session.commit()
+            status = ActionStatusCodes.OK
         elif event.action.actionMethodName == "newNoteCancel":
             status = ActionStatusCodes.CANCELLED
         else:

@@ -27,8 +27,10 @@ def new_note_dialog(event: Event) -> Card:
         name="perf_period", 
         label="Perf Period",
         items=[
-            SelectionItem(text="My text", value="yup", selected=False),
-            SelectionItem(text="My other text", value="other")
+            SelectionItem(text="2022 Q1", value="Q1FY22"),
+            SelectionItem(text="2022 Q3", value="Q3FY22"),
+            SelectionItem(text="2023 Q1", value="Q1FY23"),
+            SelectionItem(text="2023 Q3", value="Q3FY23"),
         ]
     ))
 

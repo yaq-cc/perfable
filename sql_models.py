@@ -112,6 +112,8 @@ class NoteCollaborator(Base):
     # ForeignKey("notes.note_id")
     note_id = Column(String, ForeignKey(Note.note_id))
     # ForeignKey("users.user_id")
+    # We probably can't use this binding - chicken-before-egg problem.
+    # Need to convert this into ldaps...
     note_collaborator_user_id = Column(String, ForeignKey(User.user_id))
     note_collaborator_created = Column(DateTime, default=now)
 
