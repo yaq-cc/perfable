@@ -5,8 +5,8 @@ import requests
 from fastapi import FastAPI, Request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
 from chat.events import Event, EventTypes, TextResponse
+from chat.messages import ActionResponse, ActionResponseTypes, DialogAction, ActionStatus
 from sql_models import User, NoteCategory, Note, NoteCollaborator
 from cards import new_note_dialog
 
@@ -69,7 +69,17 @@ def card_clicked_router(event: Event):
     else:
         print("NotImplementedError")
 
-    return TextResponse(text="Card clicked placeholder!")
+    response = ActionResponse.make(
+        type=ActionResponseTypes.DIALOG,
+        dialogAction=DialogAction(
+            actionStatus=ActionStatus(
+                statusCode="200",
+                userFacingMessage="Here's a message for you!",
+            )
+        ),
+    )
+
+    return response
 
 def router(event: Event):
 
