@@ -66,8 +66,8 @@ def new_note_dialog(event: Event) -> Card:
         name="note_value",
     ))
 
-    submit_action = Action(function="submit")
-    cancel_action = Action(function="cancel")
+    submit_action = Action(function="newNoteSubmit")
+    cancel_action = Action(function="newNoteCancel")
 
     submit_buttons = Widget(buttonList=ButtonList(
         buttons=[

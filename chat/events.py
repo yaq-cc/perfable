@@ -2,6 +2,8 @@ from typing import Optional, List, Union
 from pydantic import BaseModel
 from enum import Enum
 
+from .cards import FormAction
+
 class User(BaseModel):
     name: str
     displayName: str
@@ -77,16 +79,33 @@ class Message(BaseModel):
     lastUpdateTime: str
 
 
+class TimeZone(BaseModel):
+    id: str
+    offset: str
+
+class Common(BaseModel):
+    userLocale: str
+    hostApp: Optional[str]
+    platform: Optional[str]
+    timeZone: Optional[TimeZone]
+    formInputs: Optional[dict]
+    parameters: Optional[dict]
+    invokedFunction: str
+
+
 class Event(BaseModel):
     type: str
     eventTime: str
     message: Optional[Message]
     user: User
     space: Space
+    action: Optional[FormAction]
     configCompleteRedirectUrl: Optional[str]
     isDialogEvent: Optional[bool]
     dialogEventType: Optional[str]
+    common: Optional[Common]
     state: Optional[dict] = {}
+
 
     def update(self, data: dict):
         self.state.update(data)

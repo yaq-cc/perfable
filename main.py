@@ -1,6 +1,7 @@
 import os
 import json
 
+import requests
 from fastapi import FastAPI
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -9,7 +10,7 @@ from chat.events import Event, EventTypes, TextResponse
 from sql_models import User, NoteCategory, Note, NoteCollaborator
 from cards import new_note_dialog
 
-# https://webhook.site/b1ed04dc-946b-42b4-b9f2-a62ef2d3cac4
+AUDITOR = "https://webhook.site/b1ed04dc-946b-42b4-b9f2-a62ef2d3cac4"
 # https://perfable-63ietzwyxq-uk.a.run.app
 
 # Reserved for database configuration
@@ -62,6 +63,13 @@ def slash_command_router(event: Event):
     return TextResponse(text=text)
 
 def card_clicked_router(event: Event):
+    if event.dialogEventType == "SUBMIT_DIALOG":
+       if event.action.actionMethodName == "newNoteSubmit":
+           requests.post(AUDITOR, json=json.dumps(event.dict(), default=str))
+           print("yup!")
+    else:
+        print("NotImplementedError")
+
     return TextResponse(text="Card clicked placeholder!")
 
 def router(event: Event):
@@ -69,7 +77,7 @@ def router(event: Event):
     # Check for the user.
     with Session() as session:
         user = User.get_or_create_user(session, event.user)
-        event.update(dict(user=user, session=session))      
+        event.update(dict(user=user, session=session))
     
     if event.type == EventTypes.ADDED_TO_SPACE:
         response = TextResponse(text=f"Hi {user.user_first}, nice to meet you albeit virtually. How can I help?")
