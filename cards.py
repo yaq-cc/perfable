@@ -78,7 +78,7 @@ def new_note_dialog(event: Event) -> Card:
         label="Activity Collaborators",
         type=TextInputTypes.SINGLE_LINE,
         name="note_collaborators",
-        hintText="comma separated listing of collaborator LDAPs"
+        hintText="space separated listing of collaborator LDAPs"
     ))
 
     submit_action = Action(function="newNoteSubmit")
